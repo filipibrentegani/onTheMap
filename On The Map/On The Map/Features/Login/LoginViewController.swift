@@ -41,7 +41,7 @@ class LoginViewController: UIViewController {
             do {
                 let loginResponse = try response()
                 print("success: \(loginResponse)")
-                //TODO go to next screen
+                self?.performSegue(withIdentifier: "LoginSuccessSegway", sender: self)
             } catch {
                 print("error: \(error)")
                 //TODO show error

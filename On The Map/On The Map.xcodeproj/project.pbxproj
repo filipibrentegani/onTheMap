@@ -11,10 +11,12 @@
 		CC1C05062219D39A008FCC41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC1C05042219D39A008FCC41 /* Main.storyboard */; };
 		CC1C05082219D39B008FCC41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC1C05072219D39B008FCC41 /* Assets.xcassets */; };
 		CC1C050B2219D39B008FCC41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC1C05092219D39B008FCC41 /* LaunchScreen.storyboard */; };
-		CC1C05152219D658008FCC41 /* StudentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1C05142219D658008FCC41 /* StudentLocation.swift */; };
 		CC1C05172219E07D008FCC41 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1C05162219E07D008FCC41 /* LoginViewController.swift */; };
 		CC1C05192219E56D008FCC41 /* LoginBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1C05182219E56D008FCC41 /* LoginBusiness.swift */; };
 		CC1C051B2219F737008FCC41 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1C051A2219F737008FCC41 /* LoginResponse.swift */; };
+		CC1C0520221B7DA9008FCC41 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1C051F221B7DA9008FCC41 /* MapViewController.swift */; };
+		CC1C0522221B8232008FCC41 /* MapBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1C0521221B8232008FCC41 /* MapBusiness.swift */; };
+		CC1C0524221B8C6C008FCC41 /* StudentLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1C0523221B8C6C008FCC41 /* StudentLocationResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,10 +26,12 @@
 		CC1C05072219D39B008FCC41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC1C050A2219D39B008FCC41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC1C050C2219D39B008FCC41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CC1C05142219D658008FCC41 /* StudentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocation.swift; sourceTree = "<group>"; };
 		CC1C05162219E07D008FCC41 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CC1C05182219E56D008FCC41 /* LoginBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBusiness.swift; sourceTree = "<group>"; };
 		CC1C051A2219F737008FCC41 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		CC1C051F221B7DA9008FCC41 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		CC1C0521221B8232008FCC41 /* MapBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBusiness.swift; sourceTree = "<group>"; };
+		CC1C0523221B8C6C008FCC41 /* StudentLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 		CC1C051C221B76B9008FCC41 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				CC1C051E221B7D34008FCC41 /* Map */,
 				CC1C051D221B76E5008FCC41 /* Login */,
 			);
 			path = Features;
@@ -81,12 +86,21 @@
 		CC1C051D221B76E5008FCC41 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				CC1C05142219D658008FCC41 /* StudentLocation.swift */,
 				CC1C051A2219F737008FCC41 /* LoginResponse.swift */,
 				CC1C05162219E07D008FCC41 /* LoginViewController.swift */,
 				CC1C05182219E56D008FCC41 /* LoginBusiness.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		CC1C051E221B7D34008FCC41 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				CC1C0523221B8C6C008FCC41 /* StudentLocationResponse.swift */,
+				CC1C051F221B7DA9008FCC41 /* MapViewController.swift */,
+				CC1C0521221B8232008FCC41 /* MapBusiness.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,11 +174,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC1C0522221B8232008FCC41 /* MapBusiness.swift in Sources */,
 				CC1C05192219E56D008FCC41 /* LoginBusiness.swift in Sources */,
-				CC1C05152219D658008FCC41 /* StudentLocation.swift in Sources */,
+				CC1C0520221B7DA9008FCC41 /* MapViewController.swift in Sources */,
 				CC1C051B2219F737008FCC41 /* LoginResponse.swift in Sources */,
 				CC1C05012219D39A008FCC41 /* AppDelegate.swift in Sources */,
 				CC1C05172219E07D008FCC41 /* LoginViewController.swift in Sources */,
+				CC1C0524221B8C6C008FCC41 /* StudentLocationResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
