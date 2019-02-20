@@ -28,6 +28,16 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         
         mapView?.delegate = self
+        mapBusiness.requestLogin { [weak self] response in
+            do {
+                if let mkPoints = try response() {
+                    self?.mapView?.addAnnotations(mkPoints)
+                }
+            } catch {
+                print("error: \(error)")
+                //TODO show error
+            }
+        }
     }
     
     // MARK: - Actions

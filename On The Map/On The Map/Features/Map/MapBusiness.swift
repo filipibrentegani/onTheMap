@@ -47,14 +47,14 @@ class MapBusiness {
         var mkPoints = [MKPointAnnotation]()
         for studentLocation in studentLocationResponse.results {
             
-            let lat = CLLocationDegrees(studentLocation.latitude)
-            let long = CLLocationDegrees(studentLocation.longitude)
+            let lat = CLLocationDegrees(studentLocation.latitude ?? 0)
+            let long = CLLocationDegrees(studentLocation.longitude ?? 0)
             
             let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
             
-            let first = studentLocation.firstName
-            let last = studentLocation.lastName
-            let mediaURL = studentLocation.mediaURL
+            let first = studentLocation.firstName ?? ""
+            let last = studentLocation.lastName ?? ""
+            let mediaURL = studentLocation.mediaURL ?? ""
             
             let mkPoint = MKPointAnnotation()
             mkPoint.coordinate = coordinate

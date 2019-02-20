@@ -13,14 +13,14 @@ struct StudentLocationResponse: Codable {
 }
 
 struct StudentLocation: Codable {
-    var objectId: String
-    var uniqueKey: String
-    var firstName: String
-    var lastName: String
-    var mapString: String
-    var mediaURL: String
-    var latitude: Double
-    var longitude: Double
-    var createdAt: Date
-    var updatedAt: Date
+    var objectId: String?
+    var uniqueKey: String?
+    var firstName: String?
+    var lastName: String?
+    var mapString: String?
+    var mediaURL: String?
+    var latitude: Double?
+    var longitude: Double?
+    var createdAt: String?
+    var updatedAt: String?
 }
