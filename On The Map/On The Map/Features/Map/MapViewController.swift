@@ -18,9 +18,6 @@ class MapViewController: UIViewController {
     // MARK: - Properties
     @IBOutlet private weak var mapView: MKMapView?
     
-    private let mapBusiness = MapBusiness()
-    private var mkPointAnnotations = [MKPointAnnotation]()
-    
     // MARK: - Initializers
     
     // MARK: - Override
@@ -28,14 +25,15 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         
         mapView?.delegate = self
-        mapBusiness.requestLogin { [weak self] response in
-            do {
-                if let mkPoints = try response() {
-                    self?.mapView?.addAnnotations(mkPoints)
-                }
-            } catch {
-                print("error: \(error)")
-                //TODO show error
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if segue.identifier == "AddLocation" {
+            if let viewController = segue.destination as? AddLocationViewController, let tabBarController = tabBarController as? NeedsRefreshDelegate {
+                viewController.needsRefreshDelegate = tabBarController
             }
         }
     }
@@ -77,5 +75,11 @@ extension MapViewController: MKMapViewDelegate {
                 app.open(URL(string: toOpen)!, options: [:], completionHandler: nil)
             }
         }
+    }
+}
+
+extension MapViewController: StudentLocationsUpdateDelegate {
+    func reloadScreenData(_ mkPointAnnotations: [MKPointAnnotation]) {
+        mapView?.addAnnotations(mkPointAnnotations)
     }
 }

@@ -79,10 +79,10 @@
             </objects>
             <point key="canvasLocation" x="140" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Location View Controller-->
         <scene sceneID="xPh-AR-x9A">
             <objects>
-                <viewController id="vMS-pm-dc9" sceneMemberID="viewController">
+                <viewController id="vMS-pm-dc9" customClass="AddLocationViewController" customModule="On_The_Map" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MBx-8x-a1C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,11 +112,18 @@
                                 <state key="normal" title="FIND LOCATION">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="findLocationAction:" destination="vMS-pm-dc9" eventType="touchUpInside" id="1lf-qh-y4E"/>
+                                </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fdw-45-wYA">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="CANCEL" id="Zle-jg-tiy"/>
+                                    <barButtonItem title="CANCEL" id="Zle-jg-tiy">
+                                        <connections>
+                                            <action selector="cancelAction:" destination="vMS-pm-dc9" id="kKZ-KY-MXC"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="TlK-zI-hcS"/>
                                     <barButtonItem title="Add Location" style="plain" id="yho-Da-DWi">
                                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -145,15 +152,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iTJ-dU-tdh"/>
                     </view>
+                    <connections>
+                        <outlet property="addressTextField" destination="IBc-Dm-3EF" id="Lrg-rU-Apv"/>
+                        <outlet property="linkTextField" destination="mq9-pm-Kcp" id="pdU-uu-tpt"/>
+                        <segue destination="Chb-Zq-F0V" kind="show" identifier="ShowLocation" id="lAB-ed-ke3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mPl-7d-791" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3298" y="134"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Location Map View Controller-->
         <scene sceneID="n3g-BE-87Z">
             <objects>
-                <viewController id="Chb-Zq-F0V" sceneMemberID="viewController">
+                <viewController id="Chb-Zq-F0V" customClass="AddLocationMapViewController" customModule="On_The_Map" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cOi-8K-qDL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -161,7 +173,11 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lp4-ov-0PF">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="Item" image="icon_back-arrow" id="Zyt-Jp-9r8"/>
+                                    <barButtonItem title="Item" image="icon_back-arrow" id="Zyt-Jp-9r8">
+                                        <connections>
+                                            <action selector="backButtonAction:" destination="Chb-Zq-F0V" id="5x8-KU-o7w"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Tjk-Sq-WoZ"/>
                                     <barButtonItem title="Add Location" style="plain" id="uTC-F9-02H">
                                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -179,6 +195,9 @@
                                 <state key="normal" title="FINISH">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="finishAction:" destination="Chb-Zq-F0V" eventType="touchUpInside" id="hcO-sC-BDh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -196,6 +215,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cOI-GB-FG8"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="L76-60-imH" id="i9a-UO-seP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XUB-cS-SX2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -204,7 +226,7 @@
         <!--List-->
         <scene sceneID="N7z-Iz-14c">
             <objects>
-                <viewController id="u9m-fw-aZ2" sceneMemberID="viewController">
+                <viewController id="u9m-fw-aZ2" customClass="PinsListViewController" customModule="On_The_Map" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k1J-4J-92D">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -214,7 +236,7 @@
                                 <items>
                                     <barButtonItem title="Item" image="icon_pin" id="fjR-I8-YnB">
                                         <connections>
-                                            <segue destination="vMS-pm-dc9" kind="show" id="RbY-cS-UIB"/>
+                                            <segue destination="vMS-pm-dc9" kind="show" identifier="AddLocation" id="RbY-cS-UIB"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="8nP-Ug-ivK"/>
@@ -287,7 +309,7 @@
                                 <items>
                                     <barButtonItem title="Item" image="icon_pin" id="aC7-XN-K0T">
                                         <connections>
-                                            <segue destination="vMS-pm-dc9" kind="show" id="PHu-P7-GEr"/>
+                                            <segue destination="vMS-pm-dc9" kind="show" identifier="AddLocation" id="PHu-P7-GEr"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="OzP-hH-URp"/>
@@ -323,10 +345,10 @@
             </objects>
             <point key="canvasLocation" x="2084" y="-200"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="KFc-5C-L70">
             <objects>
-                <tabBarController id="9ec-Ob-7x5" sceneMemberID="viewController">
+                <tabBarController id="9ec-Ob-7x5" customClass="TabBarViewController" customModule="On_The_Map" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="88U-7R-yjC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -351,6 +373,6 @@
         <image name="icon_world" width="52" height="67"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RbY-cS-UIB"/>
+        <segue reference="PHu-P7-GEr"/>
     </inferredMetricsTieBreakers>
 </document>

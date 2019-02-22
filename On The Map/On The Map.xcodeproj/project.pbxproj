@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC1A8C1D221E1A9400C3AF0D /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1A8C1C221E1A9400C3AF0D /* TabBarViewController.swift */; };
+		CC1A8C1F221E1FEF00C3AF0D /* PinsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1A8C1E221E1FEF00C3AF0D /* PinsListViewController.swift */; };
+		CC1A8C22221E226500C3AF0D /* StudentLocationsUpdateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1A8C21221E226500C3AF0D /* StudentLocationsUpdateDelegate.swift */; };
 		CC1C05012219D39A008FCC41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1C05002219D39A008FCC41 /* AppDelegate.swift */; };
 		CC1C05062219D39A008FCC41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC1C05042219D39A008FCC41 /* Main.storyboard */; };
 		CC1C05082219D39B008FCC41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC1C05072219D39B008FCC41 /* Assets.xcassets */; };
@@ -17,9 +20,17 @@
 		CC1C0520221B7DA9008FCC41 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1C051F221B7DA9008FCC41 /* MapViewController.swift */; };
 		CC1C0522221B8232008FCC41 /* MapBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1C0521221B8232008FCC41 /* MapBusiness.swift */; };
 		CC1C0524221B8C6C008FCC41 /* StudentLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1C0523221B8C6C008FCC41 /* StudentLocationResponse.swift */; };
+		CC79195A221F8C0D00981260 /* CreatePinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC791959221F8C0D00981260 /* CreatePinResponse.swift */; };
+		CCBC045D221F892F00CD8E33 /* UpdatePinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBC045C221F892F00CD8E33 /* UpdatePinResponse.swift */; };
+		CCEF4D28221E298D002E093E /* NeedsRefreshDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF4D27221E298D002E093E /* NeedsRefreshDelegate.swift */; };
+		CCEF4D2C221E2AD1002E093E /* AddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF4D2B221E2AD1002E093E /* AddLocationViewController.swift */; };
+		CCEF4D2E221E3530002E093E /* AddLocationMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF4D2D221E3530002E093E /* AddLocationMapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC1A8C1C221E1A9400C3AF0D /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		CC1A8C1E221E1FEF00C3AF0D /* PinsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinsListViewController.swift; sourceTree = "<group>"; };
+		CC1A8C21221E226500C3AF0D /* StudentLocationsUpdateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationsUpdateDelegate.swift; sourceTree = "<group>"; };
 		CC1C04FD2219D39A008FCC41 /* On The Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On The Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC1C05002219D39A008FCC41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC1C05052219D39A008FCC41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -32,6 +43,11 @@
 		CC1C051F221B7DA9008FCC41 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CC1C0521221B8232008FCC41 /* MapBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBusiness.swift; sourceTree = "<group>"; };
 		CC1C0523221B8C6C008FCC41 /* StudentLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationResponse.swift; sourceTree = "<group>"; };
+		CC791959221F8C0D00981260 /* CreatePinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePinResponse.swift; sourceTree = "<group>"; };
+		CCBC045C221F892F00CD8E33 /* UpdatePinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePinResponse.swift; sourceTree = "<group>"; };
+		CCEF4D27221E298D002E093E /* NeedsRefreshDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedsRefreshDelegate.swift; sourceTree = "<group>"; };
+		CCEF4D2B221E2AD1002E093E /* AddLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewController.swift; sourceTree = "<group>"; };
+		CCEF4D2D221E3530002E093E /* AddLocationMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationMapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +61,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC1A8C20221E223C00C3AF0D /* Pins */ = {
+			isa = PBXGroup;
+			children = (
+				CC1A8C1E221E1FEF00C3AF0D /* PinsListViewController.swift */,
+			);
+			path = Pins;
+			sourceTree = "<group>";
+		};
 		CC1C04F42219D39A008FCC41 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +101,9 @@
 		CC1C051C221B76B9008FCC41 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				CCEF4D2A221E2AAA002E093E /* AddLocation */,
+				CCEF4D29221E2A78002E093E /* TabBar */,
+				CC1A8C20221E223C00C3AF0D /* Pins */,
 				CC1C051E221B7D34008FCC41 /* Map */,
 				CC1C051D221B76E5008FCC41 /* Login */,
 			);
@@ -96,11 +123,32 @@
 		CC1C051E221B7D34008FCC41 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				CC1C0523221B8C6C008FCC41 /* StudentLocationResponse.swift */,
 				CC1C051F221B7DA9008FCC41 /* MapViewController.swift */,
-				CC1C0521221B8232008FCC41 /* MapBusiness.swift */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		CCEF4D29221E2A78002E093E /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				CC1A8C1C221E1A9400C3AF0D /* TabBarViewController.swift */,
+				CC1A8C21221E226500C3AF0D /* StudentLocationsUpdateDelegate.swift */,
+				CCEF4D27221E298D002E093E /* NeedsRefreshDelegate.swift */,
+				CC1C0521221B8232008FCC41 /* MapBusiness.swift */,
+				CC1C0523221B8C6C008FCC41 /* StudentLocationResponse.swift */,
+				CCBC045C221F892F00CD8E33 /* UpdatePinResponse.swift */,
+				CC791959221F8C0D00981260 /* CreatePinResponse.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		CCEF4D2A221E2AAA002E093E /* AddLocation */ = {
+			isa = PBXGroup;
+			children = (
+				CCEF4D2B221E2AD1002E093E /* AddLocationViewController.swift */,
+				CCEF4D2D221E3530002E093E /* AddLocationMapViewController.swift */,
+			);
+			path = AddLocation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,13 +222,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC1A8C1D221E1A9400C3AF0D /* TabBarViewController.swift in Sources */,
 				CC1C0522221B8232008FCC41 /* MapBusiness.swift in Sources */,
+				CC1A8C22221E226500C3AF0D /* StudentLocationsUpdateDelegate.swift in Sources */,
 				CC1C05192219E56D008FCC41 /* LoginBusiness.swift in Sources */,
 				CC1C0520221B7DA9008FCC41 /* MapViewController.swift in Sources */,
 				CC1C051B2219F737008FCC41 /* LoginResponse.swift in Sources */,
+				CCEF4D28221E298D002E093E /* NeedsRefreshDelegate.swift in Sources */,
+				CC79195A221F8C0D00981260 /* CreatePinResponse.swift in Sources */,
+				CCBC045D221F892F00CD8E33 /* UpdatePinResponse.swift in Sources */,
+				CCEF4D2C221E2AD1002E093E /* AddLocationViewController.swift in Sources */,
+				CCEF4D2E221E3530002E093E /* AddLocationMapViewController.swift in Sources */,
 				CC1C05012219D39A008FCC41 /* AppDelegate.swift in Sources */,
 				CC1C05172219E07D008FCC41 /* LoginViewController.swift in Sources */,
 				CC1C0524221B8C6C008FCC41 /* StudentLocationResponse.swift in Sources */,
+				CC1A8C1F221E1FEF00C3AF0D /* PinsListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
