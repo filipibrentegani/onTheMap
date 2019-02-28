@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: - Actions
-    @IBAction func loginAction(_ sender: Any) {
+    @IBAction private func loginAction(_ sender: Any) {
         showLoading()
         loginBusiness.requestLogin(email: emailTextField?.text ?? "", password: passwordTextField?.text ?? "") { [weak self] response in
             self?.hideLoading()
@@ -47,6 +47,11 @@ class LoginViewController: UIViewController {
                 //TODO show error
             }
         }
+    }
+    
+    @IBAction private func signUpAction(_ sender: Any) {
+        guard let url = URL(string: "https://www.google.com/url?q=https://www.udacity.com/account/auth%23!/signup&sa=D&ust=1550626953445000") else { return }
+        UIApplication.shared.open(url)
     }
     
     // MARK: - Public methods

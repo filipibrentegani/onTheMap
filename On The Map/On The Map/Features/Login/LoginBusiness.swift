@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 typealias LoginCallback = (() throws -> LoginResponse?) -> Void
 
@@ -30,7 +31,40 @@ class LoginBusiness {
                 print(String(data: newData, encoding: .utf8)!)
                 do {
                     let loginResponse: LoginResponse = try JSONDecoder().decode(LoginResponse.self, from: newData)
+//                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//                    appDelegate.session = loginResponse
+                    
+//                    DispatchQueue.main.async {
+//                        completion { loginResponse }
+//                    }
+                    self.requestUserInfo(loginResponse, completion: completion)
+                } catch {
+                    completion { throw error }
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    func requestUserInfo(_ loginResponse: LoginResponse, completion: @escaping LoginCallback) {
+        let request = URLRequest(url: URL(string: "https://onthemap-api.udacity.com/v1/users/\(loginResponse.account.key)")!)
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { data, response, error in
+            if error != nil {
+                DispatchQueue.main.async {
+                    completion { throw error! }
+                }
+            }
+            let range = 5..<data!.count
+            if let newData = data?.subdata(in: range) {
+                print(String(data: newData, encoding: .utf8)!)
+                do {
+                    let userData: UserDataResponse = try JSONDecoder().decode(UserDataResponse.self, from: newData)
+                    
                     DispatchQueue.main.async {
+                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                        appDelegate.session = loginResponse
+                        appDelegate.userData = userData
                         completion { loginResponse }
                     }
                 } catch {

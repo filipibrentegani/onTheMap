@@ -39,6 +39,11 @@ class MapViewController: UIViewController {
     }
     
     // MARK: - Actions
+    @IBAction private func reloadAction(_ sender: Any) {
+        if let tabBarController = tabBarController as? NeedsRefreshDelegate {
+            tabBarController.needsRefresh()
+        }
+    }
     
     // MARK: - Public methods
     
@@ -80,6 +85,12 @@ extension MapViewController: MKMapViewDelegate {
 
 extension MapViewController: StudentLocationsUpdateDelegate {
     func reloadScreenData(_ mkPointAnnotations: [MKPointAnnotation]) {
+        if let annotations = mapView?.annotations {
+            mapView?.removeAnnotations(annotations)
+        }
         mapView?.addAnnotations(mkPointAnnotations)
+//        if let annotations = mapView?.annotations {
+//            mapView?.showAnnotations(annotations, animated: true)
+//        }
     }
 }

@@ -23,3 +23,14 @@ struct Session: Codable {
     var id: String
     var expiration: String
 }
+
+struct UserDataResponse: Codable {
+    var lastName: String
+    var firstName: String
+    
+    enum CodingKeys: String, CodingKey
+    {
+        case lastName = "last_name"
+        case firstName = "first_name"
+    }
+}

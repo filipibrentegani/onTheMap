@@ -53,6 +53,7 @@ class AddLocationMapViewController: UIViewController {
 //                    self?.navigationController?.popViewController(animated: true)
                     self?.dismiss(animated: true, completion: nil)
                     self?.popLastViewController?()
+                    self?.needsRefreshDelegate?.needsRefresh()
                 }
             } catch {
                 print("error: \(error)")

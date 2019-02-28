@@ -51,8 +51,12 @@ class AddLocationViewController: UIViewController {
                 print(error)
             } else {
                 if let pins = pins, pins.count > 0, let pin = pins.first?.location {
-                    self?.studentLocation = self?.createStudentLocation(pin)
-                    self?.performSegue(withIdentifier: "ShowLocation", sender: nil)
+                    if let studentLocation = self?.createStudentLocation(pin) {
+                        self?.studentLocation = studentLocation
+                        self?.performSegue(withIdentifier: "ShowLocation", sender: nil)
+                    } else {
+                        //TODO error on create student location, do logout
+                    }
                 } else {
                     //TODO No has locations
                 }
@@ -64,25 +68,19 @@ class AddLocationViewController: UIViewController {
     
     // MARK: - Private methods
     
-    private func createStudentLocation(_ location : CLLocation) -> StudentLocation {
-        let tempLocation = StudentLocation.init(objectId: "", uniqueKey: "", firstName: "", lastName: "", mapString: addressTextField?.text, mediaURL: linkTextField?.text, latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, createdAt: "", updatedAt: "")
-//        var studentInfo = [
-//            "uniqueKey": "", //TODO get from login
-//            "firstName": "", //TODO get from login
-//            "lastName": "", //TODO get from login
-//            "mapString": addressTextField?.text ?? "",
-//            "mediaURL": linkTextField?.text ?? "",
-//            "latitude": location.coordinate.latitude,
-//            "longitude": location.coordinate.longitude,
-//            ] as [String: AnyObject]
-        
-        
-//        studentInfo["objectId"] = locationID as AnyObject //TODO fill only if already exists a location
-        
-        return tempLocation
+    private func createStudentLocation(_ location : CLLocation) -> StudentLocation? {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        //todo verify objectId
+        if let loginResponse = appDelegate.session, let userData = appDelegate.userData {
+            let tempLocation = StudentLocation.init(objectId: "", uniqueKey: loginResponse.account.key, firstName: userData.firstName, lastName: userData.lastName, mapString: addressTextField?.text, mediaURL: linkTextField?.text, latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, createdAt: "", updatedAt: "")
+            
+            return tempLocation
+        }
+        return nil
     }
     
     private func popViewController() {
+//        navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
     }
     
